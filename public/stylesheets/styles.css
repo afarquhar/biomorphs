@@ -1,0 +1,11 @@
+.biomorph_selector {
+  float: right;
+}
+.biomorph_container {
+  float:left;
+    
+  height: 400px;
+  width: 300px;
+  float: left;
+  border: solid #eee 1px;
+}

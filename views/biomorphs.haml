@@ -1,0 +1,35 @@
+- (biomorphs).each_with_index do |biomorph, index| 
+  :plain 
+    <div class="biomorph_container">
+      <div>
+        <embed src="javascript/biomorph_#{index}.svg" width="300px" height="300px" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
+      </div>
+      <div class='biomorph_selector_#{index}'>
+        <form action="/select_biomorph" ><input class='selector' type="checkbox" name='genes' value="#{biomorph.genes}"/></form>
+      </div>
+    </div
+    <script>
+      $(function(){
+        $(".selector").change(function(){
+          $(this).parent().submit();
+        });
+      })
+    </script>
+:plain    
+  <script>
+    var timeout = setTimeout(function(){
+      var ran =Math.floor(Math.random()*8);
+      var genes = $(".biomorph_selector_"+ran).find('input').attr('value');
+      $.post('/select_biomorph', {genes: genes})
+      
+  
+    }, 1000);
+    
+    console.log(timeout);
+    $('body').click(function(){
+      console.log('click');
+      clearTimeout(timeout);
+    });
+  </script>
+
+    
