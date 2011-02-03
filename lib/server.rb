@@ -16,9 +16,10 @@ get '/biomorphs' do
   haml :biomorphs, :locals => {:biomorphs => Biomorphs.new.go}
 end
 
-get '/select_biomorph' do
+
+
+post '/select_biomorph' do
   genes = eval(params[:genes])
-  
   haml :biomorphs, :locals => {:biomorphs => Biomorphs.new(genes).go}
 end
 
