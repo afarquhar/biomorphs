@@ -45,7 +45,7 @@ class Biomorph
   end
 
   def go
-    draw_tree(125, 0, @branching, 2, @dx, @dy, @lines)
+    draw_tree(100, 50, @branching, 2, @dx, @dy, @lines)
     to_svg
   end
  
@@ -68,7 +68,7 @@ class Biomorph
     @dy = []
     
     
-    @branching = genes[8]
+    @branching = genes[8] > 10 ? 10 : genes[8]
     @dx[3] = genes[0]
     @dx[4] = genes[1]
     @dx[5] = genes[2]

@@ -3,9 +3,8 @@
 }
 .biomorph_container {
   float:left;
-    
-  height: 400px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
   float: left;
   border: solid #eee 1px;
 }
