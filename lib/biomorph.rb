@@ -23,7 +23,7 @@ class Biomorphs
   private
   
   def create_from(initial)
-    (0...8).map do |child| 
+    (0...6).map do |child| 
       i_to_change = rand(initial.size)
       delta = [1, -1].shuffle.first
       new_genes = initial.clone
@@ -45,7 +45,7 @@ class Biomorph
   end
 
   def go
-    draw_tree(100, 50, @branching, 2, @dx, @dy, @lines)
+    draw_tree(300, 150, @branching, 2, @dx, @dy, @lines)
     to_svg
   end
  

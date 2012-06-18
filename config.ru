@@ -1,7 +1,7 @@
 # To use with thin 
 #  thin start -p PORT -R config.ru
 
-require File.join(File.dirname(__FILE__), 'lib', 'server.rb')
+require File.join(File.dirname(__FILE__),  'server.rb')
 
 disable :run
 set :environment, :production
