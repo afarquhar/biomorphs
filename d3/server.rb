@@ -2,10 +2,9 @@ APP_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '.'))
 
 require 'rubygems'
 require 'sinatra'
-require "sinatra/reloader" if development?
+require "sinatra/reloader"
 require 'haml'
 
-require File.join(APP_ROOT, *%w[lib biomorph])
 
 
 get "/" do
@@ -13,13 +12,6 @@ get "/" do
 end
 
 get '/biomorphs' do
-  haml :biomorphs, :locals => {:biomorphs => Biomorphs.new.go}
+  haml :biomorphs
 end
-
-post '/select_biomorph' do
-  genes = eval(params[:genes])
-  haml :biomorphs, :locals => {:biomorphs => Biomorphs.new(genes).go}
-end
-
-
 
