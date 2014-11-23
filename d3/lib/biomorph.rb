@@ -23,7 +23,7 @@ class Biomorphs
   private
   
   def create_from(initial)
-    (0...6).map do |child| 
+    (0...1).map do |child| 
       i_to_change = rand(initial.size)
       delta = [1, -1].shuffle.first
       new_genes = initial.clone
